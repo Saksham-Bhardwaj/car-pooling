@@ -1,0 +1,46 @@
+delete database carpool;
+
+create database carpool;
+
+use carpool;
+
+drop table users;
+
+create table users(
+name varchar(255) not null,
+contact bigint primary key,
+email varchar(255) not null,
+cardetails varchar(255),
+drivinglicense varchar(255)
+);
+
+insert into Users values('saksham',9876543210,'saksham@email.com','car123','up14az9876');
+
+drop table rides;
+
+create table rides(
+rideid int(10) primary key auto_increment,
+publisher varchar(255) not null,
+requestors varchar(255),
+source varchar(255) not null,
+destination varchar(255) not null,
+start datetime not null,
+seats int(2) not null,
+contact bigint not null
+);
+
+insert into rides value(1,"saksham","arvind","noida","gurgaon","2020-01-01 10:10:10",2,9876543210);
+
+
+drop table cardetails;
+
+create table cardetails(
+carid varchar(20) primary key,
+carmodel varchar(255),
+seats int(2) not null,
+company varchar(255) not null,
+ownername varchar(255) not null,
+contact bigint not null
+);
+
+insert into cardetails value("up14br1234", "Civic",4,"Honda","saksham",987654321);
